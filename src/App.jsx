@@ -4,13 +4,13 @@ import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged }
 import { getFirestore, collection, doc, setDoc, onSnapshot, updateDoc, deleteDoc } from 'firebase/firestore';
 import { Activity, Award, CheckCircle, ChevronRight, ChevronLeft, Edit, Flame, HeartPulse, LogOut, Settings, ShieldAlert, Star, Trash2, User, Users, Pill, Upload, Download, Gift, AlertTriangle, FileText, Copy, GripVertical, Search } from 'lucide-react';
 
-const firebaseConfig = { 
-  apiKey: "AIzaSyB475AzDr96EP6I7YsyZx3OjnYDMuMaq7k", 
-  authDomain: "diabetes-sales.firebaseapp.com", 
-  projectId: "diabetes-sales", 
-  storageBucket: "diabetes-sales.firebasestorage.app", 
-  messagingSenderId: "778615949732", 
-  appId: "1:778615949732:web:47f4022e3c955277cbd931" 
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
